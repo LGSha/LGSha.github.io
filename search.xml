@@ -4,6 +4,58 @@
   
     
     <entry>
+      <title>信息打点（二）</title>
+      <link href="/2021/12/13/%E4%BF%A1%E6%81%AF%E6%89%93%E7%82%B9%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
+      <url>/2021/12/13/%E4%BF%A1%E6%81%AF%E6%89%93%E7%82%B9%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1、CMS指纹识别"><a href="#1、CMS指纹识别" class="headerlink" title="1、CMS指纹识别"></a>1、CMS指纹识别</h2><p>​    CMS指纹识别就是判断网站是使用哪种CMS（快速搭建网站的内容管理系统）搭建的，如果能够判断就可以尝试获取源码来进行白盒测试或代码设计，也可以搜索网上关于此CMS所曝出的相关漏洞加以利用。</p><p>​    可以借助在线的CMS指纹识别平台来判断，如：<br>云悉：<a href="https://www.yunsee.cn/">https://www.yunsee.cn/</a><br>WhatWeb：<a href="https://whatweb.net/">https://whatweb.net/</a><br>插件Wappalyzer： <a href="https://www.wappalyzer.com/">https://www.wappalyzer.com</a><br>脚本CMSeek：<a href="https://github.com/Tuhinshubhra/CMSeeK">https://github.com/Tuhinshubhra/CMSeeK</a></p><h2 id="2、源码泄露"><a href="#2、源码泄露" class="headerlink" title="2、源码泄露"></a>2、源码泄露</h2><p>（1）git源码泄露</p><p>（2）svn源码泄露</p><p>（3）网站备份压缩文件</p><p>（4）WEB-INF/web.xml泄露</p><p>（5）DS_Store文件泄露</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络安全 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CMS指纹识别 </tag>
+            
+            <tag> 源码泄露 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>信息打点（一）</title>
+      <link href="/2021/12/13/%E4%BF%A1%E6%81%AF%E6%89%93%E7%82%B9%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+      <url>/2021/12/13/%E4%BF%A1%E6%81%AF%E6%89%93%E7%82%B9%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1、Web架构"><a href="#1、Web架构" class="headerlink" title="1、Web架构"></a>1、Web架构</h2><p>​    Web架构方面的信息收集主要是包括开发语言、中间件、数据库、操作系统等，每个层面都有可能出现相应的漏洞，只有收集到足够的信息才能加以利用。</p><p>​    开发语言：一般可以从网站的文件后缀来判断。</p><p>​    中间件：一般可以从数据的响应包中获取到相关的信息，或者是使用端口扫描，常见的中间件在运行时会有默认的端口开启，例如Tomcat/8080、Weblogic/7001、Jboss/8080等，还可以根据常见的建站组合来判断，例如Apache+Mysql+php、IIS+Mssql+asp等。</p><p>​    数据库：一般通过端口扫描来判断，常见的数据库端口有Mysql/3306、Mssql/1433、Orcale/1521、Redis/6379等，也可以根据常见的搭配组合来判断。</p><p>​    操作系统：可以通过网站的大小写是否敏感来判断，Windows对大小写不敏感，Linux对大小写敏感，也可以通过ping目标所返回的TTL值来判断，接近64的一般是Linux，接近128的一般是Windows。</p><h2 id="2、Web源码"><a href="#2、Web源码" class="headerlink" title="2、Web源码"></a>2、Web源码</h2><p>​    常见的Web源码主要分为开源的CMS，闭源售卖的，以及内部自主研发的。</p><p>​    在信息收集中，Web源码的获取也是非常关键的，如果能得到目标网站的源码信息，就可以下载到本地进行测试或尝试代码审计。Web源码如果是开源的，就可以直接网上下载获取，如果是闭源或内部的就只能通过泄露安全或资源监控来尝试获取。</p><h2 id="3、Web域名"><a href="#3、Web域名" class="headerlink" title="3、Web域名"></a>3、Web域名</h2><p>​    域名的信息收集主要包括子域名的收集、相似域名、IP反查域名、旁注等。可以借助在线的平台或者各种工具脚本。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络安全 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 信息收集 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>基础入门（五）</title>
       <link href="/2021/12/11/%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%EF%BC%88%E4%BA%94%EF%BC%89/"/>
       <url>/2021/12/11/%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%EF%BC%88%E4%BA%94%EF%BC%89/</url>
@@ -156,19 +208,6 @@
             <tag> blog </tag>
             
         </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hello World</title>
-      <link href="/2021/10/24/hello-world/"/>
-      <url>/2021/10/24/hello-world/</url>
-      
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-      
-      
       
     </entry>
     
