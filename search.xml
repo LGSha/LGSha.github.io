@@ -4,6 +4,58 @@
   
     
     <entry>
+      <title>信息打点（四）</title>
+      <link href="/2021/12/20/%E4%BF%A1%E6%81%AF%E6%89%93%E7%82%B9%EF%BC%88%E5%9B%9B%EF%BC%89/"/>
+      <url>/2021/12/20/%E4%BF%A1%E6%81%AF%E6%89%93%E7%82%B9%EF%BC%88%E5%9B%9B%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1、前置知识"><a href="#1、前置知识" class="headerlink" title="1、前置知识"></a>1、前置知识</h2><p>1.传统访问：用户访问域名–&gt;解析服务器IP–&gt;访问目标主机</p><p>2.普通CDN：用户访问域名–&gt;CDN节点–&gt;真实服务器IP–&gt;访问目标主机</p><p>3.带WAF的CDN：用户访问域名–&gt;CDN节点（WAF）–&gt;真实服务器IP–&gt;访问目标主机</p><p>#CDN配置：</p><p>配置1：加速域名-需要启用加速的域名</p><p>配置2：加速区域-需要启用加速的地区</p><p>配置3：加速类型-需要启用加速的资源</p><p>#判定标准：</p><p>nslookup,各地ping（出现多个IP即启用CDN服务）</p><h2 id="2、CDN绕过"><a href="#2、CDN绕过" class="headerlink" title="2、CDN绕过"></a>2、CDN绕过</h2><p>​    子域名；去掉www；邮件服务器；国外访问；证书查询；APP抓包；黑暗空间引擎（fofa、360kuake）；通过漏洞或泄露获取（ssrf、phpinfo）；扫全网，以量打量；第三方接口查询等。</p><p>详细的知识点可以参考以下链接：</p><p><a href="https://zhuanlan.zhihu.com/p/33440472">https://zhuanlan.zhihu.com/p/33440472</a></p><p><a href="https://www.cnblogs.com/blacksunny/p/5771827.html">https://www.cnblogs.com/blacksunny/p/5771827.html</a></p><p>#案例资源：</p><p>超级Ping：<a href="https://www.17ce.com/">https://www.17ce.com/</a></p><p>接口查询：<a href="https://get-site-ip.com/">https://get-site-ip.com/</a></p><p>国外请求：<a href="https://tools.ipip.net/cdn.php">https://tools.ipip.net/cdn.php</a></p><p>全网扫描：<a href="https://github.com/Tai7sy/fuckcdn">https://github.com/Tai7sy/fuckcdn</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络安全 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CDN绕过 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>信息打点（三）</title>
+      <link href="/2021/12/15/%E4%BF%A1%E6%81%AF%E6%89%93%E7%82%B9%EF%BC%88%E4%B8%89%EF%BC%89/"/>
+      <url>/2021/12/15/%E4%BF%A1%E6%81%AF%E6%89%93%E7%82%B9%EF%BC%88%E4%B8%89%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1、端口扫描"><a href="#1、端口扫描" class="headerlink" title="1、端口扫描"></a>1、端口扫描</h2><p>（1）Masscan</p><p>​    Masscan和Nmap一样都是一款端口扫描工具，它的速度要比Nmap快很多，但是相应的它的准确度就不如Nmap了。Kali上有自带的Masscan扫描工具，常用的一些命令如下：</p><p>​    IP地址范围，有三种有效格式：   </p><ul><li>1、单独的IPv4地址</li><li>2、类似”10.0.0.1-10.0.0.233”的范围地址</li><li>3、CIDR地址类似于”0.0.0.0/0”，多个目标可以用逗号隔开</li></ul><p>​    -p &lt;ports,–ports &gt; 指定端口进行扫描<br>​    –banners 获取banner信息，支持少量的协议<br>​    –rate 指定发包的速率<br>​    -c , –conf 读取配置文件进行扫描<br>​    –echo将当前的配置重定向到一个配置文件中<br>​    -e , –adapter 指定用来发包的网卡接口名称<br>​    –adapter-ip 指定发包的IP地址<br>​    –adapter-port 指定发包的源端口<br>​    –adapter-mac 指定发包的源MAC地址</p><p>​    ……还有很多其它的命令可以参考网上的相关文章。</p><p>（2）Nmap</p><p>​    Nmap算是我们日常安全测试中最常使用的一款扫描工具之一了，它不仅仅是对主机发现、端口服务等的信息收集，而且还集成了漏洞探测和扫描的功能。常用的命令包括：</p><p>​    nmap &lt;目标IP地址&gt;<br>​    nmap -p（范围）&lt;目标IP&gt; /<em>-P是端口交换机（范围）是1-65535的端口数 &lt;目标IP&gt;是您的特定目标IP地址</em>/<br>​    Nmap -O &lt;目标IP地址&gt;/<em>-O是检测操作系统交换机 &lt;目标IP&gt;是您的特定目标IP地址</em>/<br>​    -sV: 指定让Nmap进行版本侦测  </p><p>​    ……还有很多其它的命令可以参考网上的相关文章。</p><h2 id="2、Waf识别"><a href="#2、Waf识别" class="headerlink" title="2、Waf识别"></a>2、Waf识别</h2><p>​    Waf就是我们常说的Web应用防火墙，是通过执行一系列针对HTTP/HTTPS的安全策略来专门为Web应用提供保护的一款产品。现在很多的国内外安全厂商都有自己研发的Waf，在后期的渗透测试中，如果目标网站系统存在Waf，就需要我们识别出它是哪种Waf，看看有没有相应的绕过技巧。但说实话，像一些大的安全厂商的Waf基本都很难绕过，因为如果随随便便就能绕过的话，那这个Waf就没有价值作用了。</p><p>​    Waf的识别可以根据以下两种方法来判断：</p><p>（1）看图识别Waf</p><p>​    就是通过前端Web页面的回显结果来判断，可以参考相关链接：</p><p>​    <a href="https://www.cnblogs.com/charon1937/p/13799467.html">https://www.cnblogs.com/charon1937/p/13799467.html</a></p><p>（2）Wafw00f</p><p>​    Wafw00f是一款Waf探测识别工具，它上面收录了很多常见的安全厂商的Waf特征库，可以用来帮助我们探测目标的防火墙信息。</p><p>​    项目地址：<a href="https://github.com/EnableSecurity/wafw00f">https://github.com/EnableSecurity/wafw00f</a></p><p>​    用法也比较简单，可以参考网上的相关文章。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络安全 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Waf识别 </tag>
+            
+            <tag> 端口扫描 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>信息打点（二）</title>
       <link href="/2021/12/13/%E4%BF%A1%E6%81%AF%E6%89%93%E7%82%B9%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
       <url>/2021/12/13/%E4%BF%A1%E6%81%AF%E6%89%93%E7%82%B9%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
