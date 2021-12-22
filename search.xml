@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>信息打点（五）</title>
+      <link href="/2021/12/22/%E4%BF%A1%E6%81%AF%E6%89%93%E7%82%B9%EF%BC%88%E4%BA%94%EF%BC%89/"/>
+      <url>/2021/12/22/%E4%BF%A1%E6%81%AF%E6%89%93%E7%82%B9%EF%BC%88%E4%BA%94%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1、网络空间测绘（黑暗引擎）"><a href="#1、网络空间测绘（黑暗引擎）" class="headerlink" title="1、网络空间测绘（黑暗引擎）"></a>1、网络空间测绘（黑暗引擎）</h2><p>​    网络空间测绘是2016年出现的一个概念，主要指用一些技术方法，来探测全球互联网空间上的节点分布情况和网络关系索引，构建全球互联网图谱的一种方法。网络空间测绘，用搜索引擎技术来提供交互，让人们可以方便的搜索到网络空间上的设备。相对于现实中使用的地图，用各种测绘方法描述和标注地理位置，用主动或被动探测的方法，来绘制网络空间上设备的网络节点和网络连接关系图，及各设备的画像。</p><p>主流的几款黑暗引擎：</p><p>FOFA：<a href="https://fofa.so/">https://fofa.so</a></p><p>360QUAKE：<a href="https://quake.360.cn/">https://quake.360.cn</a></p><p>SHODAN：<a href="https://www.shodan.io/">https://www.shodan.io</a></p><p>钟馗之眼：<a href="https://www.zoomeye.org/">https://www.zoomeye.org</a></p><p>​    这些黑暗引擎都有自己的查询语法，可以根据我们的需求来查找互联网中指定特征的网络设备，帮助我们进行资产的探测和一些信息收集。</p><h2 id="2、自动化信息收集项目"><a href="#2、自动化信息收集项目" class="headerlink" title="2、自动化信息收集项目"></a>2、自动化信息收集项目</h2><p>（1）ARL灯塔</p><p>​    ARL（Asset Reconnaissance  Lighthouse）资产侦查灯塔旨在快速发现并整理企业外网资产并为资产构建基础数据库，无需登录凭证或特殊访问即可主动发现并识别资产，让甲方安全团队或者渗透测试人员快速寻找到指定企业资产中的脆弱点，降低资产被威胁利用的可能性并规避可能带来的不利影响。</p><p><img src="/2021/12/22/%E4%BF%A1%E6%81%AF%E6%89%93%E7%82%B9%EF%BC%88%E4%BA%94%EF%BC%89/ARL%E7%99%BB%E9%99%86.PNG" alt="ARL登陆"></p><p><img src="/2021/12/22/%E4%BF%A1%E6%81%AF%E6%89%93%E7%82%B9%EF%BC%88%E4%BA%94%EF%BC%89/ARL%E4%B8%BB%E7%95%8C%E9%9D%A2.PNG"></p><p><img src="/2021/12/22/%E4%BF%A1%E6%81%AF%E6%89%93%E7%82%B9%EF%BC%88%E4%BA%94%EF%BC%89/%E4%BB%BB%E5%8A%A1.PNG"></p><p>​    详细的介绍和安装使用都不难，可以参考下面的项目地址。总的来说，这款工具集成了域名爆破、端口扫描、操作系统识别、服务识别、以及文件泄露等常规的信息收集功能，可以自动化地帮助我们对目标信息的收集，节约时间和人力，操作也比较方便，还是一款非常不错的工具的。</p><p>#项目地址：<a href="https://github.com/TophantTechnology/ARL">https://github.com/TophantTechnology/ARL</a></p><p>（2）Suize水泽</p><p>​    协助红队人员快速的信息收集，测绘目标资产，寻找薄弱点。一条龙服务，只需要输入根域名即可全方位收集相关资产，并检测漏洞。也可以输入多个域名、C段IP等。</p><p>​    <img src="/2021/12/22/%E4%BF%A1%E6%81%AF%E6%89%93%E7%82%B9%EF%BC%88%E4%BA%94%EF%BC%89/%E6%B0%B4%E6%B3%BD1.PNG"></p><p><img src="/2021/12/22/%E4%BF%A1%E6%81%AF%E6%89%93%E7%82%B9%EF%BC%88%E4%BA%94%EF%BC%89/%E6%B0%B4%E6%B3%BD2.PNG"></p><p>​    安装的话我是安装在我的云服务器上的，也可以用docker环境拉取镜像，安装过程和使用方法可以直接参考项目地址。水泽的话相比灯塔又更加强大了，它对目标资产信息的收集更加广泛，且支持漏洞检测，总的来说就一句话，水泽yyds！</p><p>#项目地址：<a href="https://github.com/0x727/ShuiZe_0x727">https://github.com/0x727/ShuiZe_0x727</a></p><h2 id="3、单点功能器"><a href="#3、单点功能器" class="headerlink" title="3、单点功能器"></a>3、单点功能器</h2><p>​    虽说自动化信息收集项目可以帮助我们节约大量的时间和人力，但是在针对某个单点信息，如子域名爆破、指纹识别、社工等信息收集时，使用专业的单点工具往往会收集的更加全面。</p><p>​    由于网上开源的优秀工具和项目实在太多了，这里就不详细赘述了，可以参考棱角的网站，上面收录了很多相对优秀的工具和项目。</p><p><img src="/2021/12/22/%E4%BF%A1%E6%81%AF%E6%89%93%E7%82%B9%EF%BC%88%E4%BA%94%EF%BC%89/%E6%A3%B1%E8%A7%921.PNG"></p><p><img src="/2021/12/22/%E4%BF%A1%E6%81%AF%E6%89%93%E7%82%B9%EF%BC%88%E4%BA%94%EF%BC%89/%E6%A3%B1%E8%A7%922.PNG"></p><p>#棱角：<a href="https://forum.ywhack.com/index.php">https://forum.ywhack.com/index.php</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络安全 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 红队工具 </tag>
+            
+            <tag> ARL灯塔 </tag>
+            
+            <tag> Suize水泽 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>信息打点（四）</title>
       <link href="/2021/12/20/%E4%BF%A1%E6%81%AF%E6%89%93%E7%82%B9%EF%BC%88%E5%9B%9B%EF%BC%89/"/>
       <url>/2021/12/20/%E4%BF%A1%E6%81%AF%E6%89%93%E7%82%B9%EF%BC%88%E5%9B%9B%EF%BC%89/</url>
